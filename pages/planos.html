@@ -61,6 +61,17 @@
 
     <h1 class="p-5">Planos</h1>
 
+    <script>
+        let semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+        let d = new Date();
+        let numero_dia = d.getDay();
+        let dia = semana[numero_dia];
+        let mensagem = '<div class="alert alert-success" role="alert"><strong>PROMOÇÃO! </strong> Assine qualquer plano hoje e receba 30 dias grátis!</div>';
+        if(dia == "Quarta-Feira"){
+            document.write(mensagem);
+        }
+    </script>
+
     <div class="row"> 
         <div class="col-12 col-md-3">
             <div class="card">
@@ -198,13 +209,12 @@
 
         <script>
             $(document).ready( function(){
-            /* configuração obtida aqui: https://datatables.net/examples/basic_init/filter_only.html */
-            $('#compare_planos').DataTable({
-                "paging":   false,
-                "searching": false,
-                "info":     false
-            });
-        } );
+                $('#compare_planos').DataTable({
+                    "paging":   false,
+                    "searching": false,
+                    "info":     false
+                });
+            } );
         </script>
 
     </footer>
